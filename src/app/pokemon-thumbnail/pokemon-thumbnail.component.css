@@ -1,0 +1,36 @@
+.pokemon-thumbnail {
+    width: 235px;
+    display: inline-block;
+    /* border: 2px black double; */
+    background: #00ffff36;
+    margin: 8px;
+    border-radius: 5px;
+}
+.pokemon-thumbnail img {
+  width: 100px;
+  background: #0000ff26;
+  border-radius: 5px;
+  padding: 25px;
+  margin-top:15px;
+  cursor: pointer;
+}
+
+.pokemon-thumbnail-large {
+    width: 100%;
+    display: inline-block;
+    background: #cfcfb2;
+    border-radius: 5px;
+    position: fixed;
+    left: 0%;
+    z-index: 1000;
+    zoom: 200%;
+
+}
+.pokemon-thumbnail-large img {
+    width: 100px;
+    background: #0000ff26;
+    border-radius: 5px;
+    padding: 25px;
+    margin-top:15px;
+    cursor: pointer;
+  }

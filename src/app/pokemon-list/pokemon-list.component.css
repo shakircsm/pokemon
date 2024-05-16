@@ -1,0 +1,13 @@
+
+.all-container {
+    text-align: center;
+  }
+
+  .loadmore {
+    width: 80%;
+    background-color: #959558;
+    margin-left: 10%;
+    padding: 5px;
+    font-size: x-large;
+    cursor: pointer;
+}

@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'HollyMolly';
+    src: local('HollyMolly'), url(public/fonts/HolyMolly.ttf) format('woff2'); 
+    font-weight: 300; /* Specify the weight if applicable */
+    font-style: normal; /* Specify the style if applicable */
+  }
