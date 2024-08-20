@@ -20,7 +20,7 @@ RUN npm run build --omit=dev
 FROM nginx:alpine
 
 # Copy the build artifacts from the build stage
-COPY --from=build dist /usr/share/nginx/html
+COPY --from=pokemon/dist/form-app/browser dist /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
