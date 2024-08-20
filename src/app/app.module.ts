@@ -12,7 +12,11 @@ import pokemon from 'pokemon';
 
 const routes: Routes = [
   { path: '', component: PokemonListComponent },
-  { path: 'detail/:id', component: PokemonListComponent }
+  { path: 'detail', component: PokemonListComponent },
+  {
+    path: 'items',
+    loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule)
+  }
 ];
 
 

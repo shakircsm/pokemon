@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnChanges, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormArray } from '@angular/forms';
 import { PokeapiService } from './pokeapi.service';
@@ -10,13 +10,12 @@ import { PokeMon } from './poke-mon';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnChanges,OnInit {
   technologyForm!: FormGroup ;
   title="CSM"+((Math.random()*100)).toString();
   getpokemon:any;
   key: string | undefined;
-  
-  
+   
   constructor(private fb: FormBuilder,private pokeapiService: PokeapiService ) {
   }
 
@@ -29,6 +28,10 @@ export class AppComponent {
       this.getpokemon = data as PokeMon;
       console.log(this.getpokemon);
     });
+  }
+
+  ngOnChanges():void{
+    console.log("chnages");
   }
 
   get skillsFormArray() {

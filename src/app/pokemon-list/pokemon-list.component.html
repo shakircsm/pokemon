@@ -1,16 +1,18 @@
 
 <div class="all-container">
-  @if (selectedPoke) {
+
+
+  <div *ngIf="selectedPoke; else ShowAll">
     <app-pokemon-thumbnail [pokedata]="selectedPoke"  (open)="openit($event)"  [class]="'pokemon-thumbnail-large'" ></app-pokemon-thumbnail>
 
-  }
+  </div>
   
-</div>
-<div class="all-container">
+  <ng-template #ShowAll>
     <ng-container *ngFor="let pokemon of poklist | slice:0:limit" >
     
-     <app-pokemon-thumbnail [pokedata]="pokemon" (open)="openit($event)" [class]="class"  ></app-pokemon-thumbnail>
-    </ng-container>
-    <div class="loadmore" (click)="loadMore()" >Load More</div>
-    <a name="bottomAnchor"></a>
-  </div>
+      <app-pokemon-thumbnail [pokedata]="pokemon" (open)="openit($event)" [class]="class"  ></app-pokemon-thumbnail>
+     </ng-container>
+  </ng-template>
+  <div class="loadmore" (click)="loadMore()" >Load More</div>
+  <a name="bottomAnchor"></a>
+</div>

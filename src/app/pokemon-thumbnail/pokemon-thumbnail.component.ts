@@ -10,8 +10,7 @@ export class PokemonThumbnailComponent {
   @Input() pokedata:any;
   @Input() class:string | undefined;
   @Output() open: EventEmitter<any> = new EventEmitter();
-  
-
+  loading: boolean=true;
   addZero(yourNumber: number | string, length: number): string {
     let num: string = String(yourNumber);
     while (num.length < length) {
@@ -23,6 +22,11 @@ export class PokemonThumbnailComponent {
 toggle(pk:PokeMon){
   this.open.emit(pk);
   console.log(pk)
+}
+
+imageLoaded(){
+  console.log("done");
+  this.loading=false;
 }
 
 }
