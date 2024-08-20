@@ -14,13 +14,13 @@ RUN npm install
 COPY . .
 
 # Build the Angular application
-RUN npm run build --configuration production
+RUN npm run build 
 
 # Stage 2: Serve the Angular app
 FROM nginx:alpine
 
 # Copy the build artifacts from the build stage
-COPY --from=build dist/pokemon /usr/share/nginx/html
+COPY --from=build dist/form-app/browser /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
