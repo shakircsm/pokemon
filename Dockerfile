@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the build artifacts from the build stage
-COPY --from=build dist/form-app/browser /usr/share/nginx/html
+COPY --from=build dist/form-app /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
